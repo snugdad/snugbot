@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/eliasgoodale/snugbot/issues"
   },
-  "homepage": "https://github.com/eliasgoodale/snugbot#readme"
+  "homepage": "https://github.com/eliasgoodale/snugbot#readme",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.5.0"
+  }
 }
