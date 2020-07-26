@@ -20,7 +20,7 @@ const builtins = new CommandModule(
     [`${UserInfo.name}`]: UserInfo,
   });
 
-const parser = prefix => message => {
+const commandParser = prefix => message => {
   const args = message.content.slice(prefix.length).trim().split(' ');
   const commandName = args[0];
   if (builtins.commandTable[commandName]) {
@@ -32,7 +32,7 @@ const parser = prefix => message => {
 
 export default class {
   static getCommandParser(prefix) {
-    return parser(prefix);
+    return commandParser(prefix);
   }
   static getCommand(commandName) {
     return builtins.getCommand(commandName);
