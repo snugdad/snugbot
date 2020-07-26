@@ -2,7 +2,7 @@ import Commands from './commands';
 import { Client, Collection } from 'discord.js';
 
 // create bot instance
-const botInstance = new Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'], commands: new Collection() });
+const botInstance = new Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 botInstance.commands = new Collection();
 
 // get handler from command module
