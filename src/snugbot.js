@@ -17,7 +17,7 @@ botInstance.on('message', (message) => {
   messageHandler(message);
 });
 
-// snugbot main driver
+// snugbot class
 export default class SnugBot {
   static connectToDiscord(clientKey) {
     botInstance.login(clientKey);
