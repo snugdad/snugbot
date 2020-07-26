@@ -4,6 +4,10 @@ export default class {
     this.commandTable = commandTable;
   }
 
+  getCommandTableSetter() {
+    return (key, value) => this.commandTable[key] = value;
+  }
+
   getCommandNames() {
     return Object.keys(this.commandTable);
   }

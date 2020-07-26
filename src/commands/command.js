@@ -4,5 +4,9 @@ export default class {
     this.description = description;
     this.execute = callback;
   }
+
+  setName(newName) {
+    this.name = newName;
+  }
 }
 
