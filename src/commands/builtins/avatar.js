@@ -1,8 +1,9 @@
-export default {
-  name: 'avatar',
-  description: 'Get the avatar URL of the tagged user(s), or your own avatar.',
-  aliases: ['icon', 'pfp'],
-  execute(message) {
+import Command from '../command';
+
+const avatar = new Command(
+  'avatar',
+  'Get the avatar URL of the tagged user(s), or your own avatar.',
+  (message, args = []) => {
     if (!message.mentions.users.size) {
       return message.channel.send(`Your avatar: <${message.author.displayAvatarURL({ dynamic: true })}>`);
     }
@@ -12,5 +13,6 @@ export default {
     });
 
     message.channel.send(avatarList);
-  },
-};
+  });
+
+export default avatar;

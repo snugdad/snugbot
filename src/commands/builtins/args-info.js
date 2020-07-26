@@ -1,13 +1,11 @@
-export default {
-  name: 'args-info',
-  description: 'Information about the arguments provided.',
-  args: true,
-  execute: (message, args) => {
-    console.log('called argsinfo');
-    if (args[0] === 'foo') {
-      return message.channel.send('bar');
-    }
+import Command from '../command';
 
-    message.channel.send(`First argument: ${args[0]}`);
-  },
-};
+const argsInfo = new Command(
+  'args-info',
+  'Information about the arguments provided.',
+  (message, args = []) => {
+    for(let i = 0; i < args.length; i++) {
+      message.channel.send(`Arg ${i + 1}: ${args[i]}\t\t`);
+    }
+  });
+export default argsInfo;

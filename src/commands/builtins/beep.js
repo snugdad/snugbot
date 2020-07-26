@@ -1,7 +1,8 @@
-module.exports = {
-	name: 'beep',
-	description: 'Beep!',
-	execute(message) {
-		message.channel.send('Boop.');
-	},
-};
+import Command from '../command';
+const beep = new Command(
+  'beep',
+  'Beep!',
+  (message, args = []) => {
+    message.channel.send('Beep!');
+  });
+export default beep;

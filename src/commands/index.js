@@ -1,27 +1,10 @@
-import { Collection } from 'discord.js';
-import builtins from './builtins';
+import Builtins from './builtins';
 
-class Commands {
-  constructor() {
-    this.loadedCommands = [ ...builtins ];
-  }
-
-
-  addTo(client) {
-    if(!Object.prototype.hasOwnProperty.call('commands')) {
-      client.commands = new Collection();
-    }
-    
-    this.loadedCommands.forEach(command => {
-      console.log(`Setting command: ${command.name}`);
-      client.commands.set(command.name, command);
+export default class Commands {
+  static addBuiltins(discordBot, prefix = '!', commands = ['args-info', 'help']) {
+    commands.forEach(commandName => {
+      discordBot.commands.set(commandName, Builtins.getCommand(commandName));
     });
-
+    return Builtins.getCommandParser(prefix);
   }
 }
-
-const instance = new Commands();
-Object.freeze(instance);
-
-export default instance;
-
