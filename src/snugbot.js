@@ -6,14 +6,15 @@ const botInstance = new Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'], c
 botInstance.commands = new Collection();
 
 // get handler from command module
-const builtinMessageHandler = Commands.addBuiltins(botInstance);
+const messageHandler = Commands.getMessageHandler();
 
+// set ready trigger
 botInstance.once('ready', () => console.log('[SnugBot]Connected!'));
 
-// use handlers in bot main listener
+// use messageHandler in bot main listener
 botInstance.on('message', (message) => {
   if (message.author.id === botInstance.user.id) return;
-  builtinMessageHandler(message);
+  messageHandler(message);
 });
 
 // snugbot main driver

@@ -28,7 +28,6 @@ const parser = prefix => message => {
       args.length > 1 ? [...args[1]] : args;
     return builtins.getCommand(commandName).execute(message, commandArgs);
   }
-
 };
 
 export default class {

@@ -8,4 +8,5 @@ const argsInfo = new Command(
       message.channel.send(`Arg ${i + 1}: ${args[i]}\t\t`);
     }
   });
+
 export default argsInfo;

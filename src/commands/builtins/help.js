@@ -10,4 +10,5 @@ const help = new Command(
 
     return message.channel.send(helpMessage);
   });
+
 export default help;
